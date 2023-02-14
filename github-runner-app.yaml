@@ -1,0 +1,10 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: runner-deployment-app
+  namespace : "cert-manager"
+spec:
+  template:
+    spec:
+      repository: "${repo_address}"
+
