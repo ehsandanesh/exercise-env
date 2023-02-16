@@ -229,6 +229,7 @@ data "template_file" "yaml_template_app" {
 
 
 resource "kubectl_manifest" "github_runner_crd_app" {
+  count = var.app_runner_enabled == true ? 1 : 0
   yaml_body = data.template_file.yaml_template_app.rendered
   depends_on = [ helm_release.github_action_controller, module.eks , helm_release.github_action_cert_manager ]
 }

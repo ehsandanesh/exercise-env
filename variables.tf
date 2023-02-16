@@ -19,9 +19,14 @@ variable "cluster_version" {
 variable "github_token" {
     description = "github token"
     type = string
-    default = "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"
+    default = ""
 }
-
+ 
+variable "app_runner_enabled" {
+    description  = "github runner enbaled for app repo"
+    type = bool
+    default = true
+}
 variable "repo_address" {
     description = "repository address"
     type = string
