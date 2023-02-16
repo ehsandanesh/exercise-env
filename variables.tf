@@ -19,7 +19,7 @@ variable "cluster_version" {
 variable "github_token" {
     description = "github token"
     type = string
-    default = "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"
+    default = "replaceme"
 }
 
 variable "repo_address" {
