@@ -20,8 +20,7 @@ jobs:
 
   test-yaml-reader:
     if: | 
-      #${{ needs.params.outputs.runner }} == "ehsan" ||  ${{ needs.params.outputs.runner }} == "self-hosted" 
-      ${{ needs.params.outputs.runner }} == "self-hosted" 
+      ${{ needs.params.outputs.runner }} == "ehsan" ||  ${{ needs.params.outputs.runner }} == "self-hosted" 
 
     needs: [params]
     runs-on: ${{ needs.params.outputs.runner }}
@@ -46,7 +45,7 @@ jobs:
 
 
   job:
-    needs: test-yaml-file
+    needs: test-yaml-reader
     runs-on: ${{ needs.params.outputs.runner }}
     name: Test 
     steps:
