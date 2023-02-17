@@ -3,10 +3,23 @@ on:
     branches:
       - main
 env:
-  agent: "self-hosted"
+  AGENT: "self-hosted"
+
+
+
 jobs:
+  params:
+    runs-on: self-hosted
+    outputs:
+      runner: ${{steps.agent.output.ehsan}}
+    steps:
+      - name: set agent
+        id: agent
+        run: |
+          echo "::set-output name=ehsan::$AGENT"
+
   test-yaml-reader:
-    runs-on: ${{env.agent}}
+    runs-on: ${{needs.params.outputs.runner}}
     name: Test read-yaml
     steps:
       - uses: actions/checkout@v1
