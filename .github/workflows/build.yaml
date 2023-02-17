@@ -11,7 +11,7 @@ jobs:
   params:
     runs-on: self-hosted
     outputs:
-      runner: ${{steps.agent.output.runner}}
+      runner: ${{steps.agent.outputs.runner}}
     steps:
       - name: set agent
         id: agent
@@ -38,5 +38,5 @@ jobs:
           
       - name: Display runner
         run: |
-          echo "${{ jobs.params.needs.outputs.runner }}"
+          echo "${{ needs.params.outputs.runner }}"
  
