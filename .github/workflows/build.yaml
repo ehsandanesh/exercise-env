@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Run read-yaml action
         id: yaml-data
-        uses: jbutcher5/"${{needs.params.outputs.yaml}}"@main      # You may wish to replace main with a version tag such as '1.6' etc.
+        uses: jbutcher5/${{ needs.params.outputs.yaml }}@main      # You may wish to replace main with a version tag such as '1.6' etc.
         with:
           file: './github-runner.yaml'          # File to read from
           key-path: '["spec"]' # Access the runs key then the using key and retuns the value.
