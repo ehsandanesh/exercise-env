@@ -47,6 +47,6 @@ jobs:
     needs: test-yaml-file
     runs-on: ${{ needs.params.outputs.runner }}
     name: Test 
-      steps:
-        - name: test depe
-          run: echo "${{ needs.params.outputs.runner }}"
+    steps:
+      - name: test depe
+        run: echo "${{ needs.params.outputs.runner }}"
