@@ -46,7 +46,9 @@ jobs:
 
   job:
     needs: ["test-yaml-reader","params"]
-    needs: ["params"]
+    if: |
+      always()
+      && contains(needs.params.*.result, 'success')
     runs-on: ${{ needs.params.outputs.runner }}
     name: Test 
     steps:
