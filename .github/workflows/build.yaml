@@ -19,7 +19,7 @@ jobs:
           echo "runner=self-hosted" >> $GITHUB_OUTPUT
 
   test-yaml-reader:
-    if: ${{ needs.params.outputs.runner == "ehsan" }}
+    if: ${{ needs.params.outputs.runner == 'ehsan' }}
       #${{ needs.params.outputs.runner }} == "ehsan" ||  ${{ needs.params.outputs.runner }} == "self-hosted" 
 
     needs: [params]
