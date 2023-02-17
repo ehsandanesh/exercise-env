@@ -20,7 +20,8 @@ jobs:
 
   test-yaml-reader:
     needs: [params]
-    runs-on: ${{ needs.params.outputs.runner }}
+#    runs-on: ${{ needs.params.outputs.runner }}
+    runs-on: self-hosted
     name: Test read-yaml
     steps:
       - uses: actions/checkout@v1
@@ -32,5 +33,7 @@ jobs:
           key-path: '["spec"]' # Access the runs key then the using key and retuns the value.
 
       - name: Display read-yaml output
-        run: echo "${{ steps.yaml-data.outputs.data }}"
+        run: |
+          echo "${{ steps.yaml-data.outputs.data }}"
+          echo "${{ needs.params.outputs.runner }}"
           
