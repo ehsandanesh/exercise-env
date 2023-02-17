@@ -38,5 +38,5 @@ jobs:
           
       - name: Display runner
         run: |
-          echo "${{ needs.params.outputs.runner }}"
+          echo "${{ jobs.params.needs.outputs.runner }}"
  
