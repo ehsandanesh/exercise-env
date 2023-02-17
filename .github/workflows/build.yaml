@@ -11,12 +11,12 @@ jobs:
   params:
     runs-on: self-hosted
     outputs:
-      runner: ${{steps.agent.output.ehsan}}
+      runner: ${{steps.agent.output.runner}}
     steps:
       - name: set agent
         id: agent
         run: |
-          echo "::set-output name=ehsan::self-hosted"
+          echo "::set-output name=runner::self-hosted"
 
   test-yaml-reader:
     needs: [params]
