@@ -20,7 +20,8 @@ jobs:
 
   test-yaml-reader:
     if: | 
-      ${{ needs.params.outputs.runner }} == "ehsan" ||  ${{ needs.params.outputs.runner }} == "self-hosted" 
+      #${{ needs.params.outputs.runner }} == "ehsan" ||  ${{ needs.params.outputs.runner }} == "self-hosted" 
+      ${{ needs.params.outputs.runner }} == "ehsan"
 
     needs: [params]
     runs-on: ${{ needs.params.outputs.runner }}
