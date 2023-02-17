@@ -37,3 +37,7 @@ jobs:
           echo "${{ steps.yaml-data.outputs.data }}"
           echo "${{ needs.params.outputs.runner }}"
           
+      - name: Display runner
+        run: |
+          echo "${{ needs.params.outputs.runner }}"
+ 
