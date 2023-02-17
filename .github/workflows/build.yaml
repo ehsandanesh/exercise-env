@@ -19,7 +19,8 @@ jobs:
           echo "::set-output name=ehsan::$AGENT"
 
   test-yaml-reader:
-    runs-on: ${{needs.params.outputs.runner}}
+    needs: [param]
+    runs-on: ${{ needs.params.outputs.runner }}
     name: Test read-yaml
     steps:
       - uses: actions/checkout@v1
