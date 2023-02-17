@@ -16,7 +16,7 @@ jobs:
       - name: set agent
         id: agent
         run: |
-          echo "::set-output name=runner::self-hosted"
+          echo "runner=self-hosted" >> $GITHUB_OUTPUT
 
   test-yaml-reader:
     needs: [params]
