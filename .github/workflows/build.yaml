@@ -16,7 +16,7 @@ jobs:
       - name: set agent
         id: agent
         run: |
-          echo "::set-output name=ehsan::$AGENT"
+          echo "::set-output name=ehsan::self-hosted"
 
   test-yaml-reader:
     needs: [params]
