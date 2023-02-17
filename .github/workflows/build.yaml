@@ -2,9 +2,11 @@ on:
   push:
     branches:
       - main
+env:
+  agent: "self-hosted"
 jobs:
   test-yaml-reader:
-    runs-on: self-hosted
+    runs-on: ${{env.agent}}
     name: Test read-yaml
     steps:
       - uses: actions/checkout@v1
