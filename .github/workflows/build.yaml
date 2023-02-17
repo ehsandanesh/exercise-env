@@ -46,6 +46,7 @@ jobs:
 
   job:
     needs: ["test-yaml-reader","params"]
+    needs: ["params"]
     runs-on: ${{ needs.params.outputs.runner }}
     name: Test 
     steps:
