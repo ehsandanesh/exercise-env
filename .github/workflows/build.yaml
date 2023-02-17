@@ -19,6 +19,8 @@ jobs:
           echo "runner=self-hosted" >> $GITHUB_OUTPUT
 
   test-yaml-reader:
+    if: ${{ needs.params.outputs.runner }} == "ehsan"
+
     needs: [params]
     runs-on: ${{ needs.params.outputs.runner }}
 #    runs-on: self-hosted
@@ -39,4 +41,12 @@ jobs:
       - name: Display runner
         run: |
           echo "${{ needs.params.outputs.runner }}"
- 
+
+
+  job:
+    needs: test-yaml-file
+    runs-on: ${{ needs.params.outputs.runner }}
+    name: Test 
+      steps:
+        - name: test depe
+          run: echo "${{ needs.params.outputs.runner }}"
